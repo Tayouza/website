@@ -1,0 +1,418 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.overlay-loading{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0008;
+    display: none;
+}
+
+.overlay-loading img{
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.erro404 {
+    width: 100%;
+    padding: 40px 10px;
+    display: grid;
+    place-items: center;
+}
+
+.erro404 h2 {
+    text-align: center;
+    font-size: 52px
+}
+
+.erro404 p {
+    font-size: 32px;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, textarea{
+    outline: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 2%;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: #3a457c;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header a {
+    color: white;
+}
+
+.desk ul {
+    list-style: none;
+    display: flex;
+    column-gap: 20px;
+}
+
+#menu-hamburguer {
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+    top: 25px;
+}
+
+#menu-hamburguer span {
+    background-color: white;
+    width: 35px;
+    height: 5px;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    transition: .4s;
+}
+
+#menu-hamburguer span:nth-of-type(1) {
+    top: 0;
+}
+
+#menu-hamburguer span:nth-of-type(3) {
+    top: 20px;
+}
+
+.openMenu span:nth-of-type(1), .openMenu span:nth-of-type(3) {
+    display: none;
+}
+
+.openMenu span:nth-of-type(2) {
+    transform: rotate(45deg);
+}
+
+.openMenu span:nth-of-type(4) {
+    transform: rotate(-45deg);
+}
+
+.mobile {
+    display: none;
+    z-index: 2;
+}
+
+.banner {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.banner form {
+    display: grid;
+    row-gap: 5px;
+}
+
+.banner h3 {
+    text-align: center;
+    color: white;
+}
+
+.banner input, textarea {
+    width: 350px;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+#sugestoes{
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fffa;
+    padding: 5px;
+    row-gap: 5px;
+    display: none;
+}
+
+#sugestoes span{
+    cursor: pointer;
+    color: #2787be;
+}
+
+#sugestoes span:hover{
+    cursor: pointer;
+    color: #27be84;
+}
+
+.news{
+    text-align: center;
+}
+
+.email-success {
+    color: #0bc066;
+    font-weight: bold;
+    margin-top: 5px;
+    height: 25px;
+    background-color: #fff8;
+    border-radius: 5px;
+}
+
+.email-fail {
+    color: tomato;
+    font-weight: bold;
+    margin-top: 5px;
+    height: 25px;
+    background-color: #fff8;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    color: white;
+    background-color: #2787be;
+    border: 0;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0bc066;
+}
+
+input[type="submit"]:active {
+    background-color: #181e3a;
+}
+
+#sobre {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 2%;
+}
+
+.descricao {
+    width: 50%;
+}
+
+.descricao h3 {
+    padding: 10px 0;
+}
+
+.descricao p {
+    text-align: justify;
+    line-height: 25px;
+}
+
+.imgSobre {
+    width: 30%
+}
+
+.imgSobre img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.habilidades {
+    background-color: #eee;
+}
+
+.habilidades-pacote {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.habilidades svg {
+    fill: #3a457c;
+}
+
+.habilidades h3 {
+    color: #aaa;
+    font-style: italic;
+}
+
+.depoEServicos {
+    display: flex;
+    background-color: #3a457c;
+    color: white;
+}
+
+.pacote {
+    column-gap: 40px
+}
+
+.pacote h3 {
+    font-size: 22px;
+    font-weight: 100;
+}
+
+.depoimentos {
+    width: 45%;
+}
+
+.depo {
+    margin: 10px 0;
+    border-bottom: 1px solid white;
+}
+
+.depo p {
+    margin: 10px 0;
+}
+
+#servicos {
+    width: 45%;
+    align-self: flex-start;
+}
+
+#servicos li {
+    margin: 10px 0;
+}
+
+.toup {
+    width: 100%;
+    background-color: #303966;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.toup a {
+    color: white;
+    padding: 5px 10px 5px 200px;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: #242c53;
+    display: grid;
+    place-items: center;
+    color: white;
+}
+
+@media screen and (max-width: 700px) {
+    .desk {
+        display: none;
+    }
+
+    #menu-hamburguer {
+        display: block;
+    }
+
+    .mobile {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 70px;
+    }
+
+    .mobile ul {
+        list-style: none;
+        width: 100%;
+    }
+
+    .mobile li {
+        width: 100%;
+        text-align: center;
+        background-color: #3a457c;
+        border-bottom: 1px solid white;
+    }
+
+    .mobile li {
+        padding: 15px 0;
+        cursor: pointer;
+    }
+
+    .mobile a {
+        padding: 15px 150px;
+    }
+
+    .mobile li:hover, .mobile a:hover {
+        background-color: #6172c7;
+    }
+
+    #sobre {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .imgSobre {
+        width: 50%
+    }
+
+    .descricao {
+        width: 90%;
+    }
+
+    .container {
+        flex-direction: column;
+        row-gap: 35px;
+        padding: 50px 0;
+    }
+
+    .stack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stack p {
+        width: 70%;
+    }
+
+    .depoimentos {
+        width: 80%
+    }
+
+    #servicos {
+        align-self: center;
+        width: 80%;
+    }
+
+}
