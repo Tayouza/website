@@ -20,7 +20,7 @@ require('config.php'); //obter configs gerais
 
     <header id="topo">
         <div class="logo">
-            <a href="home">
+            <a href="<?php echo INCLUDE_PATH ?>home">
                 <h1>TayouzaDev</h1>
             </a>
         </div>
@@ -31,6 +31,7 @@ require('config.php'); //obter configs gerais
                     <li><a href="<?php echo INCLUDE_PATH ?>#sobre">Sobre</a></li>
                     <li><a href="<?php echo INCLUDE_PATH ?>#servicos">Serviços</a></li>
                     <li><a href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH ?>painel">Entrar</a></li>
                 </ul>
             </nav>
             <div id="menu-hamburguer">
@@ -45,6 +46,7 @@ require('config.php'); //obter configs gerais
                     <li><a href="<?php echo INCLUDE_PATH ?>#sobre">Sobre</a></li>
                     <li><a href="<?php echo INCLUDE_PATH ?>#servicos">Serviços</a></li>
                     <li><a href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH ?>painel">Entrar</a></li>
                 </ul>
             </nav>
         </div>

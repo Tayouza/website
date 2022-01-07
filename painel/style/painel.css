@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #333;
+}
+
+.login {
+    position: relative;
+    width: 360px;
+    padding: 35px 10px;
+    background-color: #3a457c;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    color: white;
+    font-size: 22px;
+}
+
+.login a{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+}
+
+.login form {
+    width: 250px;
+    display: grid;
+    row-gap: 10px;
+    text-align: center;
+}
+
+.login form>input {
+    padding: 5px;
+}
+
+.login form>input:focus {
+    background-color: #ebf5b3;
+}
+
+.login form div>input {
+    width: 100px;
+    padding: 5px;
+}
