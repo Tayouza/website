@@ -10,7 +10,7 @@ function ocultarAvisoEmail(classe) {
             }, 1000);
             //aviso.style.display = 'none';
             aviso.remove();
-        }, 1000)
+        }, 1000);
     }
 }
 

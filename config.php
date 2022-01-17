@@ -14,15 +14,12 @@ spl_autoload_register($autoload);
 define('INCLUDE_PATH', 'http://localhost/aulasphp/');
 define('INCLUDE_PATH_PAINEL', 'http://localhost/aulasphp/painel/');
 
-$pdo = new PDO('mysql: host=localhost; dbname=main; port=3306','root','');
+//conectar DB
+define('HOST', 'localhost');
+define('DATABASE', 'main');
+define('USER', 'root');
+define('PASSWORD', '');
+define('PORT','3306');
 
-
-
-function gravarEmailDB($pdo, $nome, $email, $tel, $mensagem)
-{
-    $sql = "INSERT INTO emails(nome,email,telefone,mensagem) VALUES (?,?,?,?)";
-    $insert = $pdo->prepare($sql);
-    $insert->execute([$nome, $email, $tel, $mensagem]);
-}
 
 ?>

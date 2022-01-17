@@ -31,7 +31,16 @@ require('config.php'); //obter configs gerais
                     <li><a href="<?php echo INCLUDE_PATH ?>#sobre">Sobre</a></li>
                     <li><a href="<?php echo INCLUDE_PATH ?>#servicos">Serviços</a></li>
                     <li><a href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH ?>painel">Entrar</a></li>
+                    <?php
+
+                    if (!isset($_SESSION['login'])) {
+                        echo '<li><a href="'.INCLUDE_PATH .'painel">Entrar</a></li>';
+                    } else {
+                        echo '<li><a href="'.INCLUDE_PATH .'painel">Painel</a></li>';
+                    }
+
+                    ?>
+
                 </ul>
             </nav>
             <div id="menu-hamburguer">
@@ -46,13 +55,21 @@ require('config.php'); //obter configs gerais
                     <li><a href="<?php echo INCLUDE_PATH ?>#sobre">Sobre</a></li>
                     <li><a href="<?php echo INCLUDE_PATH ?>#servicos">Serviços</a></li>
                     <li><a href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH ?>painel">Entrar</a></li>
+                    <?php
+
+                    if (!isset($_SESSION['login'])) {
+                        echo '<li><a href="'.INCLUDE_PATH .'painel">Entrar</a></li>';
+                    } else {
+                        echo '<li><a href="'.INCLUDE_PATH .'painel">Painel</a></li>';
+                    }
+
+                    ?>
                 </ul>
             </nav>
         </div>
     </header>
 
-    
+
 
     <?php
 

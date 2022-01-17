@@ -14,14 +14,14 @@
     $email = $_POST['email'];
     $tel = isset($_POST['tel']) ? $_POST['tel'] : 'Não informado';
     $mensagem = isset($_POST['mensagem']) ? $_POST['mensagem'] : 'Não informado';
-    
+
     $novoEmail = new Email();
     $novoEmail->addEndereco('duvidas@tayouza.com', $nome);
     try {
     $novoEmail->formatarEmail(['assunto' => $assunto, 'corpo' => $corpo]);
         if ($novoEmail->enviarEmail()) {
             $data["sucesso"] = true;
-            gravarEmailDB($pdo, $nome, $email, $tel, $mensagem);
+            Database::gravarEmailDB($nome, $email, $tel, $mensagem);
         } else {
             $data["erro"] = true;
         }
