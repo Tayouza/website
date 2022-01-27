@@ -79,17 +79,23 @@ h4 {
     border-radius: 5px;
 }
 
-.btn_sair {
+.btn {
     width: 100px;
     height: 40px;
-    background-color: tomato;
+    padding: 20px auto;
     color: white;
     border-radius: 5px;
     border: 0;
     cursor: pointer;
 }
 
-.login .formLogin {}
+.tomato {
+    background-color: tomato;
+}
+
+.acqua {
+    background-color: cornflowerblue;
+}
 
 .login .formRegistro {
     display: none;
@@ -103,10 +109,95 @@ h4 {
     padding: 5px;
 }
 
-.error{
+.error {
     color: red;
 }
 
-.success{
+.success {
     color: green;
 }
+
+.box{
+    width: 250px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.box .conta-usuario{
+    margin: 10px;
+}
+
+.box hr{
+    border: 0;
+    border-top: 2px dotted tomato;
+}
+
+body{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+main{
+    width: 100%;
+    background-color: #f9fbe7;
+}
+
+main .conteudo{
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+}
+
+header{
+    height: 50px;
+    background-color: #66bb6a;
+    position: relative;
+}
+
+header a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    display: grid;
+    place-items: center;
+}
+
+aside{
+    width: 300px;
+    background-color: #388e3c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    cursor: default;
+}
+
+aside h3{
+    font-size:  18px;
+    margin: 10px 0;
+}
+aside .menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu ul{
+    list-style: none;
+}
+
+.menu a{
+    color: white;
+    transition: .4s;
+}
+
+.menu a:hover{
+    color: purple;
+}
+

@@ -2,10 +2,18 @@
 
     include('../config.php');
 
-    if(!Painel::logado()){
-        include('login.php');
+    $url = $_GET['url'] ?? 'index';
+
+    if($url === 'index'){    
+        if(!Painel::logado()){
+            include('login.php');
+        }else{
+            include('main.php');
+        }
+    }else if($url === 'logout'){
+        Painel::logout();
     }else{
-        include('main.php');
+        header('Location: '.INCLUDE_PATH.'pages/404');
     }
 
 ?>

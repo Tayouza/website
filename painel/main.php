@@ -1,15 +1,12 @@
 <?php
-
-if (isset($_POST['sair'])) {
-    session_destroy();
-    sleep(1);
-    header("Location: " . INCLUDE_PATH);
+if (isset($_GET['logout'])) {
+    Painel::logout();
 }
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -20,12 +17,23 @@ if (isset($_POST['sair'])) {
 </head>
 
 <body>
-    <h2><a href="<?php echo INCLUDE_PATH?>">Painel</a></h2>
-    <h4>Bem vindo <?php echo ucfirst($_SESSION['user'])."!"; ?></h4>
-    <br>
-    <form action="" method="post">
-        <input type="submit" value="Sair" name="sair" class="btn_sair">
-    </form>
+    <main>
+        <header>
+            <a href=<?php echo INCLUDE_PATH_PAINEL . "logout" ?> class="btn tomato"><span>Logout</span></a>
+        </header>
+        <div class="conteudo">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, cumque pariatur vel itaque quas id magni quia exercitationem et velit consectetur inventore, in animi harum, aspernatur rem fuga eius culpa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, cumque pariatur vel itaque quas id magni quia exercitationem et velit consectetur inventore, in animi harum, aspernatur rem fuga eius culpa. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus dicta recusandae consectetur atque dolor quod aut alias. Magnam, ipsum odit explicabo quae nesciunt tenetur tempore iste error porro necessitatibus? Quo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque deserunt quisquam optio ab exercitationem natus porro molestiae vero reiciendis similique, aliquid adipisci, fugit impedit repellendus! Earum necessitatibus quaerat fugit laboriosam! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, tenetur! Numquam consequuntur aliquam sunt eligendi, quis iusto perferendis maiores assumenda molestias laboriosam eveniet, minus nemo odit culpa quae possimus placeat?
+        </div>
+    </main>
+    <aside>
+        <h2>TayouzaDev</h2>
+        <h3>Bem vindo, <?php echo ucfirst($_SESSION['user']); ?></h3>
+        <div class="menu">
+            <ul>
+                <li><a href="<?php echo INCLUDE_PATH . 'home' ?>">Home</a></li>
+            </ul>
+        </div>
+    </aside>
 </body>
 
 </html>

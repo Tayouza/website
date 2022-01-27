@@ -7,7 +7,7 @@
         public static function conectar(){
             if(!isset(self::$pdo)){
                 try{
-                    self::$pdo = new PDO('mysql:host='.HOST.';dbname='.DATABASE.';port='.PORT,USER,PASSWORD);
+                    self::$pdo = new PDO(TYPEDB.':host='.HOST.';dbname='.DATABASE.';port='.PORT,USER,PASSWORD);
                     self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 }catch(Exception $e){
                     echo '<span style="color: red; font-size: 12px; text-align: center;">Erro ao Conectar ao servidor<span>';

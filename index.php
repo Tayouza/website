@@ -17,7 +17,7 @@ require('config.php'); //obter configs gerais
 </head>
 
 <body>
-
+    
     <header id="topo">
         <div class="logo">
             <a href="<?php echo INCLUDE_PATH ?>home">
@@ -34,9 +34,9 @@ require('config.php'); //obter configs gerais
                     <?php
 
                     if (!isset($_SESSION['login'])) {
-                        echo '<li><a href="'.INCLUDE_PATH .'painel">Entrar</a></li>';
+                        echo '<li><a href="'.INCLUDE_PATH .'painel/">Entrar</a></li>';
                     } else {
-                        echo '<li><a href="'.INCLUDE_PATH .'painel">Painel</a></li>';
+                        echo '<li><a href="'.INCLUDE_PATH .'painel/">Painel</a></li>';
                     }
 
                     ?>
@@ -58,9 +58,9 @@ require('config.php'); //obter configs gerais
                     <?php
 
                     if (!isset($_SESSION['login'])) {
-                        echo '<li><a href="'.INCLUDE_PATH .'painel">Entrar</a></li>';
+                        echo '<li><a href="'.INCLUDE_PATH .'painel/">Entrar</a></li>';
                     } else {
-                        echo '<li><a href="'.INCLUDE_PATH .'painel">Painel</a></li>';
+                        echo '<li><a href="'.INCLUDE_PATH .'painel/">Painel</a></li>';
                     }
 
                     ?>
@@ -72,7 +72,7 @@ require('config.php'); //obter configs gerais
 
 
     <?php
-
+    
     $url = isset($_GET['url']) ? $_GET['url'] : 'home';
 
     if (file_exists('pages/' . $url . '.php')) {

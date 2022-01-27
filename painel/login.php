@@ -32,6 +32,7 @@
                         $_SESSION['login'] = true;
                         $_SESSION['user'] = $user;
                         header('Location: ' . INCLUDE_PATH_PAINEL);
+                        die();
                     } else {
                         echo '<p class="notify error">Senha incorreta!</span>';
                     }
@@ -44,8 +45,8 @@
             ?>
             <div class="formLogin">
                 <form action="" method="POST">
-                    <input type="text" name="usuario" id="usuario" placeholder="Usuário" autocomplete="off" autofocus>
-                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                    <input type="text" name="usuario" id="usuario" placeholder="Usuário" autocomplete="off" autofocus required>
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required>
                     <div>
                         <input type="button" value="Registrar-se" id="alterRegistrar">
                         <input type="submit" value="Login" id="subLogin">
@@ -75,9 +76,9 @@
 
             <div class="formRegistro">
                 <form action="" method="post">
-                    <input type="text" name="regUsuario" id="regUsuario" placeholder="Usuário" require autocomplete="off">
-                    <input type="password" name="regSenha" id="regSenha" placeholder="Senha" require>
-                    <input type="password" name="confRegSenha" id="confRegSenha" placeholder="Confirmar senha" require>
+                    <input type="text" name="regUsuario" id="regUsuario" placeholder="Usuário" required autocomplete="off">
+                    <input type="password" name="regSenha" id="regSenha" placeholder="Senha" required>
+                    <input type="password" name="confRegSenha" id="confRegSenha" placeholder="Confirmar senha" required>
                     <div>
                         <input type="button" value="Voltar" id="voltar">
                         <input type="submit" value="Registrar-se" id="registrar">

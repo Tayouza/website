@@ -11,10 +11,11 @@ $autoload = function($class){
 
 spl_autoload_register($autoload);
 
-define('INCLUDE_PATH', 'http://localhost/aulasphp/');
-define('INCLUDE_PATH_PAINEL', 'http://localhost/aulasphp/painel/');
+define('INCLUDE_PATH', 'http://192.168.13.245/aulasphp/');
+define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'painel/');
 
 //conectar DB
+define('TYPEDB', 'mysql');
 define('HOST', 'localhost');
 define('DATABASE', 'main');
 define('USER', 'root');
