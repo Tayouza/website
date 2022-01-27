@@ -76,10 +76,10 @@ function validarNome() {
     inputNome = document.querySelector('[name="nome"]');
     let verificar = inputNome.value.split(' ');
     if (verificar.length >= 2 && verificar[1] != '') {
-        inputNome.style.border = '2px solid #8c4';
+        inputNome.style.border = '1px solid #8c4';
         inputNome.validar = false;
     } else {
-        inputNome.style.border = '2px solid #c44';
+        inputNome.style.border = '1px solid #c44';
         inputNome.validar = true;
     }
 }
@@ -88,20 +88,20 @@ function validarMail() {
     inputMailContato = document.querySelector('[name="email"]');
     let verificar = inputMailContato.value.split('@');
     if (verificar.length >= 2 && verificar[1] != '') {
-        inputMailContato.style.border = '2px solid #8c4';
+        inputMailContato.style.border = '1px solid #8c4';
         inputMailContato.validar = false;
     } else {
-        inputMailContato.style.border = '2px solid #c44';
+        inputMailContato.style.border = '1px solid #c44';
         inputMailContato.validar = true;
     }
 }
 
 function validarTel() {
     if (inputTel[0].value.length == 14) {
-        inputTel[0].style.border = '2px solid #8c4';
+        inputTel[0].style.border = '1px solid #8c4';
         inputTel[0].validar = false;
     } else {
-        inputTel[0].style.border = '2px solid #c44';
+        inputTel[0].style.border = '1px solid #c44';
         inputTel[0].validar = true;
     }
 }

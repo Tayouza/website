@@ -1,13 +1,16 @@
 <div class="contato">
     <form method="POST" action="">
-        <div class="input">
-            <input type="text" name="nome" placeholder="Nome completo..." onblur="validarNome()" onkeyup="validarNome()" required>
+        <div class="field">
+            <input type="text" name="nome"onblur="validarNome()" onkeyup="validarNome()" required>
+            <label for="nome" title="Nome" data-title="Nome"></label>
         </div>
-        <div class="input">
-            <input type="email" name="email" onblur="validarMail()" onkeyup="validarMail()" placeholder="Email..." required>
+        <div class="field">
+            <input type="email" name="email" onblur="validarMail()" onkeyup="validarMail()" required>
+            <label for="email" title="Email" data-title="Email"></label>
         </div>
-        <div class="input">
-            <input type="tel" name="tel" id="tel" onblur="validarTel()" onkeyup="validarTel()" placeholder="Telefone..." required>
+        <div class="field">
+            <input type="tel" name="tel" id="tel" onblur="validarTel()" onkeyup="validarTel()" required>
+            <label for="tel" title="Telefone" data-title="Telefone"></label>
         </div>
         <div class="mensagem">
             <textarea name="mensagem" maxlength="300" placeholder="Digite sua mensagem..." rows="1" onkeyup="resetHeight(); contadorChar();" oninput="textareaHeight()" required></textarea>

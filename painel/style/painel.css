@@ -32,13 +32,13 @@ h4 {
     position: relative;
     width: 360px;
     padding: 35px 10px;
-    background-color: #3a457c;
+    background-color: white;
     border-radius: 5px;
     display: flex;
     align-items: center;
     flex-direction: column;
     row-gap: 20px;
-    color: white;
+    color: #3a457c;
     font-size: 22px;
 }
 
@@ -49,31 +49,29 @@ h4 {
     color: white;
 }
 
-.login form {
+.login .formLogin, .login .formRegistro {
     width: 250px;
     display: grid;
     row-gap: 10px;
     text-align: center;
 }
 
-.login form>input {
-    padding: 10px 15px;
-    border: 0;
+.login .field>input {
     border-radius: 3px;
     outline: 0;
 }
 
-.login form>input:focus {
-    background-color: #ebf5b3;
+.login .btns{
+    margin: 10px 0;
 }
 
-.login form div>input, .login form div>a {
+.login .btns>input, .login form div>a {
     width: 110px;
     height: 37px;
     padding: 10px;
-    background-color: white;
+    background-color: #3a457c;
     border: 0;
-    color: black;
+    color: white;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
@@ -200,4 +198,6 @@ aside .menu{
 .menu a:hover{
     color: purple;
 }
+
+
 

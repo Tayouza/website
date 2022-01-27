@@ -4,7 +4,6 @@ if (isset($_GET['logout'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,7 +14,6 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_PAINEL; ?>style/painel.css">
     <title>Painel</title>
 </head>
-
 <body>
     <main>
         <header>
