@@ -1,11 +1,11 @@
 <div class="contato">
     <form method="POST" action="">
         <div class="field">
-            <input type="text" name="nome"onblur="validarNome()" onkeyup="validarNome()" required>
-            <label for="nome" title="Nome" data-title="Nome"></label>
+            <input type="text" name="nome" onblur="validarNome()" onkeyup="validarNome()" required>
+            <label for="nome" title="Nome Completo" data-title="Nome Completo"></label>
         </div>
         <div class="field">
-            <input type="email" name="email" onblur="validarMail()" onkeyup="validarMail()" required>
+            <input type="text" name="email" id="email-contato" onblur="validarMail()" onkeyup="validarMail()" required>
             <label for="email" title="Email" data-title="Email"></label>
         </div>
         <div class="field">
