@@ -38,6 +38,8 @@ h4 {
     font-size: 24px;
 }
 
+/* Login Page */
+
 .login {
     position: relative;
     width: 360px;
@@ -142,7 +144,9 @@ h4 {
     border-top: 2px dotted tomato;
 }
 
-body{
+/* Main Page */
+
+.main-page{
     display: flex;
     flex-direction: row-reverse;
 }
@@ -198,6 +202,9 @@ aside .menu{
 
 .menu ul{
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 .menu a{
@@ -206,7 +213,7 @@ aside .menu{
 }
 
 .menu a:hover{
-    color: purple;
+    color: yellow;
 }
 
 

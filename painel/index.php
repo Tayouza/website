@@ -26,16 +26,3 @@ switch ($url) {
         header('Location: ' . INCLUDE_PATH . 'pages/404');
         break;
 }
-/*
-    if($url === 'index'){    
-        if(!Painel::logado()){
-            header('Location: login');
-        }else{
-            header('Location: main');
-        }
-    }else if($url === 'logout'){
-        Painel::logout();
-    }else{
-        header('Location: '.INCLUDE_PATH.'pages/404');
-    }
-*/
