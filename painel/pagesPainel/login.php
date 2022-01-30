@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_PAINEL; ?>style/painel.css">
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>styles/contato.css">
     <title>Login</title>
 </head>
 
@@ -36,7 +37,6 @@
                     } else {
                         echo '<p class="notify error">Senha incorreta!</span>';
                     }
-
                 } else {
                     echo '<p class="notify error">Usuário não encontrado!</span>';
                 }
@@ -45,9 +45,17 @@
             ?>
             <div class="formLogin">
                 <form action="" method="POST">
-                    <input type="text" name="usuario" id="usuario" placeholder="Usuário" autocomplete="off" autofocus required>
-                    <input type="password" name="senha" id="senha" placeholder="Senha" required>
-                    <div>
+                    <div class="field-wrap">
+                        <div class="field">
+                            <input type="text" name="usuario" id="usuario" autocomplete="off" autofocus required>
+                            <label for="usuario" title="Usuário" data-title="Usuário"></label>
+                        </div>
+                        <div class="field">
+                            <input type="password" name="senha" id="senha" required>
+                            <label for="senha" title="Senha" data-title="Será que é essa senha?"></label>
+                        </div>
+                    </div>
+                    <div class="btns">
                         <input type="button" value="Registrar-se" id="alterRegistrar">
                         <input type="submit" value="Login" id="subLogin">
                     </div>
@@ -76,10 +84,21 @@
 
             <div class="formRegistro">
                 <form action="" method="post">
-                    <input type="text" name="regUsuario" id="regUsuario" placeholder="Usuário" required autocomplete="off">
-                    <input type="password" name="regSenha" id="regSenha" placeholder="Senha" required>
-                    <input type="password" name="confRegSenha" id="confRegSenha" placeholder="Confirmar senha" required>
-                    <div>
+                    <div class="field-wrap">
+                        <div class="field">
+                            <input type="text" name="regUsuario" id="regUsuario" required autocomplete="off">
+                            <label for="regUsuario" title="Usuário" data-title="Usuário"></label>
+                        </div>
+                        <div class="field">
+                            <input type="password" name="regSenha" id="regSenha" required>
+                            <label for="regSenha" title="Senha" data-title="Senha"></label>
+                        </div>
+                        <div class="field">
+                            <input type="password" name="confRegSenha" id="confRegSenha" required>
+                            <label for="confRegSenha" title="Confirmar Senha" data-title="Confirmar Senha"></label>
+                        </div>
+                    </div>
+                    <div class="btns">
                         <input type="button" value="Voltar" id="voltar">
                         <input type="submit" value="Registrar-se" id="registrar">
                     </div>

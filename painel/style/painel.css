@@ -18,27 +18,39 @@ html, body {
     background-color: #333;
 }
 
-h2 a {
-    text-decoration: none;
-    color: black;
-    font-size: 32px;
+.aviso{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #3a457c;
+    padding: 80px 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.aviso span{
+    color: red;
 }
 
 h4 {
     font-size: 24px;
 }
 
+/* Login Page */
+
 .login {
     position: relative;
     width: 360px;
     padding: 35px 10px;
-    background-color: #3a457c;
+    background-color: white;
     border-radius: 5px;
     display: flex;
     align-items: center;
     flex-direction: column;
     row-gap: 20px;
-    color: white;
+    color: #3a457c;
     font-size: 22px;
 }
 
@@ -46,34 +58,32 @@ h4 {
     position: absolute;
     top: 10px;
     right: 10px;
-    color: white;
+    color: red;
 }
 
-.login form {
+.login .formLogin, .login .formRegistro {
     width: 250px;
     display: grid;
     row-gap: 10px;
     text-align: center;
 }
 
-.login form>input {
-    padding: 10px 15px;
-    border: 0;
+.login .field>input {
     border-radius: 3px;
     outline: 0;
 }
 
-.login form>input:focus {
-    background-color: #ebf5b3;
+.login .btns{
+    margin: 10px 0;
 }
 
-.login form div>input, .login form div>a {
+.login .btns>input, .login form div>a {
     width: 110px;
     height: 37px;
     padding: 10px;
-    background-color: white;
+    background-color: #3a457c;
     border: 0;
-    color: black;
+    color: white;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
@@ -134,7 +144,9 @@ h4 {
     border-top: 2px dotted tomato;
 }
 
-body{
+/* Main Page */
+
+.main-page{
     display: flex;
     flex-direction: row-reverse;
 }
@@ -190,6 +202,9 @@ aside .menu{
 
 .menu ul{
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 .menu a{
@@ -198,6 +213,8 @@ aside .menu{
 }
 
 .menu a:hover{
-    color: purple;
+    color: yellow;
 }
+
+
 

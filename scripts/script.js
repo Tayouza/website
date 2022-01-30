@@ -2,7 +2,6 @@ const include_path = 'http://localhost/aulasphp/';
 
 function ocultarAvisoEmail(classe) {
     let aviso = document.querySelector(classe);
-    console.log(aviso);
     if (aviso != null) {
         let timeout = setTimeout(function () {
             aviso.animate({
@@ -24,11 +23,11 @@ if (inputEmailHome) {
         if (split.length >= 2) {
             sugestoes.style.display = 'grid';
             sugestoes.innerHTML = `
-        <span>${split[0]}@gmail.com</span>
-        <span>${split[0]}@hotmail.com</span>
-        <span>${split[0]}@yahoo.com.br</span>
-        <span>${split[0]}@outlook.com</span>
-        `
+                                    <span>${split[0]}@gmail.com</span>
+                                    <span>${split[0]}@hotmail.com</span>
+                                    <span>${split[0]}@yahoo.com.br</span>
+                                    <span>${split[0]}@outlook.com</span>
+                                `
             let spans = document.querySelectorAll('#sugestoes span');
             addFinalEmail(spans);
         } else {
@@ -70,16 +69,17 @@ function contadorChar() {
     }
 }
 
-let inputNome, inputMailContato;
+let inputNome = [], inputMailContato = [];
+
 
 function validarNome() {
     inputNome = document.querySelector('[name="nome"]');
     let verificar = inputNome.value.split(' ');
     if (verificar.length >= 2 && verificar[1] != '') {
-        inputNome.style.border = '2px solid #8c4';
+        inputNome.style.border = '1px solid #8c4';
         inputNome.validar = false;
     } else {
-        inputNome.style.border = '2px solid #c44';
+        inputNome.style.border = '1px solid #c44';
         inputNome.validar = true;
     }
 }
@@ -88,28 +88,29 @@ function validarMail() {
     inputMailContato = document.querySelector('[name="email"]');
     let verificar = inputMailContato.value.split('@');
     if (verificar.length >= 2 && verificar[1] != '') {
-        inputMailContato.style.border = '2px solid #8c4';
+        inputMailContato.style.border = '1px solid #8c4';
         inputMailContato.validar = false;
     } else {
-        inputMailContato.style.border = '2px solid #c44';
+        inputMailContato.style.border = '1px solid #c44';
         inputMailContato.validar = true;
     }
 }
 
 function validarTel() {
     if (inputTel[0].value.length == 14) {
-        inputTel[0].style.border = '2px solid #8c4';
+        inputTel[0].style.border = '1px solid #8c4';
         inputTel[0].validar = false;
     } else {
-        inputTel[0].style.border = '2px solid #c44';
+        inputTel[0].style.border = '1px solid #c44';
         inputTel[0].validar = true;
     }
 }
 
-if (document.querySelector('[name="submit"]')) {
-    let enviar = document.querySelector('[name="submit"]');
-    try {
-        enviar.onclick = function (e) {
+let enviar = document.querySelector('[name="submit"]');
+
+if (enviar) {
+    enviar.onclick = function (e) {
+        try {
             if (inputNome.validar || inputMailContato.validar || inputTel[0].validar) {
                 e.preventDefault();
                 if (inputNome.validar) {
@@ -120,9 +121,11 @@ if (document.querySelector('[name="submit"]')) {
                     infoErro(inputTel[0]);
                 }
             }
-            ocultarInfoErro();
+        } catch (e) {
+
         }
-    } catch (e) { }
+        ocultarInfoErro();
+    }
 }
 
 function infoErro(input) {
@@ -134,7 +137,7 @@ function infoErro(input) {
 }
 
 function ocultarInfoErro() {
-    let inputs = document.querySelectorAll('.input');
+    let inputs = document.querySelectorAll('.field');
     let span = document.querySelectorAll('.info-erro');
     for (el of inputs) {
         el.onclick = function () {
