@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_PAINEL; ?>style/painel.css">
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>styles/placeholder.css">
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>styles/contato.css">
     <title>Login</title>
 </head>
@@ -13,7 +15,7 @@
 <body>
     <div class="container">
 
-        <div class="login">
+        <div class="login drag">
             <a href="../home">X</a>
             <h2>TayouzaDev</h2>
             <?php
@@ -22,16 +24,21 @@
                 $user = $_POST['usuario'];
                 $password = $_POST['senha'];
                 $pdo = Database::conectar();
-                $sql = $pdo->prepare("SELECT * FROM `main`.`logins` WHERE email = ?");
+                $sql = $pdo->prepare("SELECT * FROM `main`.`logins` WHERE user = ?");
                 $sql->execute(array($user));
-                $result = $sql->fetchAll();
+                $result = $sql->fetch();
 
                 if (!empty($result)) {
-                    $hash = $result[0]['senha'];
+                    $hash = $result['pass'];
 
                     if (password_verify($password, $hash)) {
+                        $pdo = Database::conectar()->query("SELECT * FROM dadospessoais WHERE dadospessoais.id_login = " . $result['id']);
+                        $infos = $pdo->fetch(PDO::FETCH_ASSOC);
                         $_SESSION['login'] = true;
+                        $_SESSION['id'] = $result['id'];
                         $_SESSION['user'] = $user;
+                        $_SESSION['nome'] = $infos['nome'];
+                        $_SESSION['cargo'] = $infos['cargo'];
                         header('Location: ' . INCLUDE_PATH_PAINEL);
                         die();
                     } else {
@@ -59,6 +66,10 @@
                         <input type="button" value="Registrar-se" id="alterRegistrar">
                         <input type="submit" value="Login" id="subLogin">
                     </div>
+                    <div class="revelarsenha">
+                        <i class="bi-eye pass-login pass-login-visivel"></i>
+                        <i class="bi-eye-slash pass-login pass-login-invisivel"></i>
+                    </div>
                 </form>
             </div>
 
@@ -69,10 +80,10 @@
                 $regPass = $_POST['regSenha'];
 
                 $pdo = Database::conectar();
-                $sql = $pdo->prepare("SELECT * FROM `main`.`logins` WHERE email = ?");
+                $sql = $pdo->prepare("SELECT * FROM `main`.`logins` WHERE user = ?");
                 $sql->execute(array($regUser));
                 if ($sql->rowCount() == 0) {
-                    $sql = $pdo->prepare("INSERT INTO `main`.`logins`(email, senha) VALUES (?,?)");
+                    $sql = $pdo->prepare("INSERT INTO `main`.`logins`(user, pass) VALUES (?,?)");
                     $sql->execute(array($regUser, password_hash($regPass, PASSWORD_DEFAULT)));
                     echo '<span class="notify success">Cadastrado com sucesso!</span>';
                 } else {
@@ -97,16 +108,26 @@
                             <input type="password" name="confRegSenha" id="confRegSenha" required>
                             <label for="confRegSenha" title="Confirmar Senha" data-title="Confirmar Senha"></label>
                         </div>
+                        <div class="revelarsenha">
+                            <i class="bi-eye pass-registro pass-registro-visivel"></i>
+                            <i class="bi-eye-slash pass-registro pass-registro-invisivel"></i>
+                        </div>
                     </div>
                     <div class="btns">
                         <input type="button" value="Voltar" id="voltar">
                         <input type="submit" value="Registrar-se" id="registrar">
+                    </div>
+                    <div class="revelarsenha">
+                        <i class="bi-eye pass-confRegistro pass-confRegistro-visivel"></i>
+                        <i class="bi-eye-slash pass-confRegistro pass-confRegistro-invisivel"></i>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
+    <script src="<?php echo INCLUDE_PATH_PAINEL ?>script/jquery.js "></script>
+    <script src="<?php echo INCLUDE_PATH_PAINEL ?>script/jquery-ui.min.js "></script>
     <script src="<?php echo INCLUDE_PATH_PAINEL ?>script/painel.js"></script>
 </body>
 

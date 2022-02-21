@@ -14,10 +14,10 @@ switch ($url) {
             break;
         };
     case 'login':
-        include 'pagesPainel/login.php';
+        include 'login.php';
         break;
     case 'main':
-        include 'pagesPainel/main.php';
+        include 'main.php';
         break;
     case 'logout':
         Painel::logout();
