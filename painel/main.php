@@ -1,13 +1,3 @@
-<?php
-
-if (isset($_GET['logout'])) {
-    Painel::logout();
-}
-
-$cargo = Painel::getDadosPessoais($_SESSION['id']);
-$cargo = $cargo['nome_cargo'];
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,6 +14,10 @@ $cargo = $cargo['nome_cargo'];
 
 <?php
 
+if (isset($_GET['logout'])) {
+    Painel::logout();
+}
+
 if (!Painel::logado()) {
     echo '
         <div class="aviso">
@@ -37,6 +31,11 @@ if (!Painel::logado()) {
     die();
 }
 
+if (Painel::logado()) {
+    $cargo = Painel::getDadosPessoais($_SESSION['id']);
+    extract($cargo);
+}
+
 ?>
 
 <body class="main-page">
@@ -45,7 +44,7 @@ if (!Painel::logado()) {
             <a href="logout" class="btn tomato"><span>Logout</span></a>
         </header>
         <div class="conteudo">
-            
+
             <?php
 
             $rota = $_GET['route'] ?? 'painel-home';
@@ -57,6 +56,7 @@ if (!Painel::logado()) {
             }
 
             ?>
+
         </div>
     </main>
     <aside>
@@ -68,7 +68,7 @@ if (!Painel::logado()) {
             </div>
             <p>Bem vindo(a)</p>
             <h3><?= ucfirst($_SESSION['nome']); ?></h3>
-            <p><em><?= ucfirst($cargo); ?></em></p>
+            <p><em><?= ucfirst($nome_cargo); ?></em></p>
         </div>
         <div class="menu">
             <ul>

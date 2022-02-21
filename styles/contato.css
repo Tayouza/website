@@ -27,10 +27,23 @@
 .contato input, .contato textarea {
     font-size: 14px;
     width: 250px;
-    padding: 10px 15px;
     resize: none;
     position: relative;
     border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    padding: 20px auto;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 16px;
 }
 
 .mensagem {

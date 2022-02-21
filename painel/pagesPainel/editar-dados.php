@@ -7,6 +7,7 @@ if (!empty($dados))
     extract($dados);
 $nome = $nome ?? '';
 $idade = $idade ?? '';
+$_SESSION['nome'] = $nome ?? '';
 ?>
 
 <section class="artigo-painel editar-dados white">
@@ -29,7 +30,7 @@ $idade = $idade ?? '';
         </div>
         <div class="btns">
             <a href="<?= INCLUDE_PATH_PAINEL ?>main?route=dados-pessoais" class="btn gold">Voltar</a>
-            <input type="submit" value="<?php echo !empty($dados) ? 'Alterar' : 'Adicionar' ?>" class="btn seagreen">
+            <input type="submit" value="<?php echo !empty($nome) ? 'Alterar' : 'Adicionar' ?>" class="btn seagreen">
         </div>
     </form>
 </section>

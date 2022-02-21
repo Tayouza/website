@@ -4,7 +4,7 @@
 
         <?php
         $dados = Painel::getDadosPessoais($_SESSION['id']);
-        if (!empty($dados)) {
+        if (!empty($dados['nome'])) {
             extract($dados);
 
             echo '<tr>
@@ -25,5 +25,5 @@
         ?>
 
     </table>
-    <a href="?route=editar-dados" class="btn tomato"><?php echo !empty($dados) ? 'Editar' : 'Adicionar' ?></a>
+    <a href="?route=editar-dados" class="btn tomato"><?php echo !empty($dados['nome']) ? 'Editar' : 'Adicionar' ?></a>
 </section>

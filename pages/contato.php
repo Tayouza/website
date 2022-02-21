@@ -16,7 +16,7 @@
             <textarea name="mensagem" maxlength="300" placeholder="Digite sua mensagem..." rows="1" onkeyup="resetHeight(); contadorChar();" oninput="textareaHeight()" required></textarea>
             <span class="contador">0/300</span>
         </div>
-        <input type="submit" name="submit" value="Enviar">
+        <input class="btn" type="submit" name="submit" value="Enviar">
     </form>
 </div>
 
