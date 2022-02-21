@@ -1,7 +1,7 @@
 <?php
+extract(Painel::listarCargos($_SESSION['id']));
 if (isset($_POST['atualizarcargos'])) {
     echo (Painel::alterarCargos($_POST));
-    $cargo = Painel::listarCargos($_SESSION['id']);
 }
 $listarUsuariosOnline = Site::listarUsuariosOnline();
 $listarUsuariosCadastrados = Painel::listarUsuariosCadastrados();
@@ -106,17 +106,17 @@ if ($cargo === 2) :
 
     <section class="artigo-painel">
         <h2><i class="bi-person-bounding-box"></i> Usuários cadastrados</h2>
-            <div class="tabela-painel">
-                <table>
-                    <tr>
-                        <th>Usuário</th>
-                        <th>Nome</th>
-                        <th>Idade</th>
-                        <th>Cargo</th>
-                    </tr>
-                    <?php
-                    for ($i = 0; $i < count($listarUsuariosCadastrados); $i++) {
-                        echo '
+        <div class="tabela-painel">
+            <table>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Cargo</th>
+                </tr>
+                <?php
+                for ($i = 0; $i < count($listarUsuariosCadastrados); $i++) {
+                    echo '
                             <tr>
                                 <td>' . $listarUsuariosCadastrados[$i]['user'] . '</td>
                                 <td>' . $listarUsuariosCadastrados[$i]['nome'] . '</td>
@@ -124,10 +124,10 @@ if ($cargo === 2) :
                                 <td>' . $listarUsuariosCadastrados[$i]['nome_cargo'] . '</td>
                             </tr>
                         ';
-                    }
-                    ?>
-                </table>
-            </div>
+                }
+                ?>
+            </table>
+        </div>
     </section>
 
 

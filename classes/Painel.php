@@ -77,7 +77,7 @@ class Painel
 
             return $result;
         }else{
-            $pdo = Database::conectar()->query("SELECT cargo FROM dadospessoais WHERE id = '$where'");
+            $pdo = Database::conectar()->query("SELECT cargo FROM dadospessoais WHERE id_login = '$where'");
             $result = $pdo->fetch(PDO::FETCH_ASSOC);
 
             return $result;
@@ -95,8 +95,8 @@ class Painel
 
             $pdo = Database::conectar()->prepare(
                 "UPDATE dadospessoais
-                                                  SET cargo = ?
-                                                  WHERE id_login = ?"
+                SET cargo = ?
+                WHERE id_login = ?"
             );
             $pdo->execute(array($cargo, $id));
         }
