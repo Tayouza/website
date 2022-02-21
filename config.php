@@ -12,7 +12,7 @@ $autoload = function($class){
 
 spl_autoload_register($autoload);
 
-define('INCLUDE_PATH', 'http://192.168.0.107/aulasphp/');
+define('INCLUDE_PATH', 'http://localhost/aulasphp/');
 define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'painel/');
 
 //conectar DB

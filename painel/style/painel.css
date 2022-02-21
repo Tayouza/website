@@ -108,7 +108,7 @@ h4 {
 }
 
 .btn {
-    width: 100px;
+    width: 120px;
     height: 40px;
     padding: 20px auto;
     color: white;
@@ -452,6 +452,15 @@ aside .menu {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.usuarios-cadastrados{
+    display: flex;
+    flex-direction: column;
+}
+
+.center-self{
+    align-self: center;
 }
 
 

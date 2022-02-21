@@ -26,6 +26,13 @@
 
                 echo(Login::logarConta($user, $password));
             }
+            
+            if (isset($_POST['regUsuario'])) {
+                $regUser = $_POST['regUsuario'];
+                $regPass = $_POST['regSenha'];
+                
+                Login::RegistrarConta($regUser, $regPass);
+            }
 
             ?>
             <div class="formLogin">
@@ -50,17 +57,6 @@
                     </div>
                 </form>
             </div>
-
-            <?php
-
-            if (isset($_POST['regUsuario'])) {
-                $regUser = $_POST['regUsuario'];
-                $regPass = $_POST['regSenha'];
-                
-                Login::RegistrarConta($regUser, $regPass);
-            }
-
-            ?>
 
             <div class="formRegistro">
                 <form action="" method="post">

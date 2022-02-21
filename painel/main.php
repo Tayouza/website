@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_PAINEL; ?>style/painel.css">
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>styles/placeholder.css">
-    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>styles/contato.css">
     <title>Painel</title>
 </head>
 
